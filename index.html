@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Clear Capitol - File manipulation</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">CLEAR CAPITAL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h4 class="mt-5">Upload and parse a file!</h4>
+
+        <p>Test for Cyrus Horne</p>
+
+        <fieldset style="margin:0 auto; padding: 20px; border:1px solid black; border-radius: 10px; width: 800px; background-color:#E3E3E3">
+
+            <form action="filestoParse" enctype="multipart/form-data" method="POST">
+
+              <input type="file" name="parseFile">
+              <input type="submit" value="Parse!">
+            </form>
+          
+        </fieldset>
+
+        <p style="margin-top:20px">Supports the following type of separators</p>
+          <ul class="list-unstyled text-center">
+            <li>comma separated</li>
+            <li>tab delimited</li>
+            <li>...more coming soon!</li>
+          </ul>
+  
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/jquery/jquery.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
