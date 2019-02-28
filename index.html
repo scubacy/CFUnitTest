@@ -11,7 +11,7 @@
   <title>Clear Capitol - File manipulation</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
 
@@ -35,20 +35,25 @@
 
         <p>Test for Cyrus Horne</p>
 
-        <fieldset style="margin:0 auto; padding: 20px; border:1px solid black; border-radius: 10px; width: 800px; background-color:#E3E3E3">
+        <div class="alert alert-danger" role="alert" id="errorDiv" style="display:none; margin:0 auto; width: 800px;">
+            
+        </div>
+
+        <fieldset style="margin:10px auto; padding: 20px; border:1px solid black; border-radius: 10px; width: 800px; background-color:#E3E3E3">
 
             <form action="filestoParse" enctype="multipart/form-data" method="POST">
+              <input type="hidden" name="fileExt" value="" id="fileExt" />
 
-              <input type="file" name="parseFile">
-              <input type="submit" value="Parse!">
+              <input type="file" name="parseFile" id="filePicker" title="Choose a file to be parsed">
+              <input type="submit" value="Parse!" disabled='true' id="submitButton" title="Click here to parse the file">
             </form>
           
         </fieldset>
 
         <p style="margin-top:20px">Supports the following type of separators</p>
           <ul class="list-unstyled text-center">
-            <li>comma separated</li>
-            <li>tab delimited</li>
+            <li>comma separated <small></span>(<a href="filestoParse/file1.csv">download sample</a>)</small> </li>
+            <li>tab delimited <small></span>(<a href="filestoParse/file2.tab">download sample</a>)</small> </li>
             <li>...more coming soon!</li>
           </ul>
   
@@ -58,9 +63,33 @@
   </div>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="/jquery/jquery.min.js"></script>
-  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script
+  src="//code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+ 
+  <script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
 </html>
+
+<script>
+  $("#filePicker").trigger("change");
+
+  //this script is going to get the filename and validate the extension against the list. also populated the hidden file extension value
+  $("#filePicker").on("change", function() {
+    var fileName = $(this).val();    
+    var extension = fileName.substr( (fileName.lastIndexOf('.') +1) ); // get the extension
+    var validExtensions = ['csv','tab']; //these are the valid file extensions
+
+    if ( validExtensions.indexOf(extension) < 0 ) {
+      $("#errorDiv").fadeIn().text("Please choose a file with 'tab' or 'csv' extension. ");
+      $(this).val("");  //clear file
+    } else {
+      $("#fileExt").val(extension);
+      $("#submitButton").attr("disabled", false);
+      $("#errorDiv").fadeOut();
+    }
+  })
+</script>
