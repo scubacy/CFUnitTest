@@ -57,7 +57,7 @@
           <div class="alert alert-danger" role="alert" id="errorDiv" style="margin:30px auto; width: 800px;">No File was selected.</div>
         </cfif>
 
-        
+        <p><a href="/" title="Parse another file"><< Parse another file...</a></p>
             
         </div>
 
