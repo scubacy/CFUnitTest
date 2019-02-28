@@ -10,21 +10,10 @@ component output="false" hint="This parses flat files returns each line based on
             //init the vars
             var textFile = arguments.theFile;
             var delimiter = arguments.fileExt;
-            var csvstring = "";
-            var tabstring = "";
 
+            var finalstring = getNextLineTokens(textFile, delimiter);
 
-
-            if ( delimiter EQ "csv" ) {
-                csvstring =  ListChangeDelims(theFile, "<br/>", ",");
-              return csvstring;
-            } else if ( delimiter EQ "tab" ) {
-                tabstring =  ListChangeDelims(theFile, "<br/>", "#chr(9)#");
-              return tabstring;
-            } else {
-                return "Invalid file extension"
-            }
-
+            return finalstring;
  
         }
         catch (any e) {
@@ -32,14 +21,27 @@ component output="false" hint="This parses flat files returns each line based on
             writeDump(e.message);
         }
 
-        return 
+  
 
         
     } // end getFile
 
     remote any function getNextLineTokens (required any textFile, required string delimiter) {
 
-        
+        if ( delimiter EQ "csv" ) { // replaces the commas with space and crlf with breaks
+            var csvstring =  ListChangeDelims(textFile, chr(32), ",");
+            var finalcsvstring =  replace(csvstring, chr(13)&chr(10),"<br />","all");
+          return finalcsvstring;
+
+        } else if ( delimiter EQ "tab" ) { // replaces the tabs with space and crlf with breaks
+            var tabstring =  ListChangeDelims(textFile, chr(32), "#chr(9)#");
+            var finaltabstring =  replace(textFile, chr(13)&chr(10),"<br />","all");
+          return finaltabstring;
+
+        } else {
+
+            return "Invalid file extension";
+        }
         
     } //end getNextLineTokens 
 
