@@ -1,7 +1,7 @@
 clearCapitolTest
 Applicant Cyrus Horne : created 2/29/2019
 
-## BEGIN INSTRUCTIONS
+### INSTRUCTIONS
 
  Demonstrate Use of Files, Strings and
  Simple Patterns In ColdFusion or other OO language of choice
