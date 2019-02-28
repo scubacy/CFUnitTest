@@ -1,16 +1,16 @@
 clearCapitolTest
 Applicant Cyrus Horne : created 2/29/2019
 
-BEGIN INSTRUCTIONS
+## BEGIN INSTRUCTIONS
 
  Demonstrate Use of Files, Strings and
  Simple Patterns In ColdFusion or other OO language of choice
- # Hypothetical Technical Requirement:
+ ### Hypothetical Technical Requirement:
 
 Create a ColdFusion component that is able to read the next line from a text file and return a list of strings that represent each tab-delimited token that it reads from the file.  For example, given the following file contents:
 
-This<tab>is<tab>a<tab>test
-red<tab>green<tab>blue
+This 'tab' is 'tab' a 'tab' test
+red 'tab' green 'tab' blue
 
 The first call to a getNextLineTokens method of this new component would return a list of strings that includes "This", "is, "a" and "test".  The second call would return "red", "green" and "blue".  A third call should return null.
 
