@@ -2,6 +2,7 @@ clearCapitolTest
 Applicant Cyrus Horne : created 2/29/2019
 
 ### NOTES
+Running in commandbox
 index.html page begins the application and has a file input form with client side validation of the file extension.
 The submit button is not active until a valid file is selected.
 A successful submit will show the output within 'filestoParse/index.cfm'
