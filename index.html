@@ -54,6 +54,11 @@
             <li>...more coming soon!</li>
           </ul>
   
+            <p>
+              <a href="/testbox/test-runner/" target="_blank">Go to /testbox/test-runner/</a>
+              <small>2 tests are available: cctests/1 or cctests/2 </small>
+             
+            </p>
         
       </div>
     </div>
@@ -72,7 +77,10 @@
 </html>
 
 <script>
-  $("#filePicker").trigger("change");
+  $(function() {
+    $("#filePicker").trigger("change");
+  })
+ 
 
   //this script is going to get the filename and validate the extension against the list. also populated the hidden file extension value
   $("#filePicker").on("change", function() {
