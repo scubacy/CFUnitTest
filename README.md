@@ -5,7 +5,7 @@ Applicant Cyrus Horne : created 2/29/2019
 
 index.html page begins the application and has a file input form with client side validation of the file extension.
 The submit button is not active until a valid file is selected.
-A successful submit will show the output within 'filestoParse/index.cfm'
+A successful or insuccessful submit will show the output within 'filestoParse/index.cfm'
 
 One component located in 'components/parseFile.cfc' which parses the file as text and checks for valid extension(s) with section noted for additional extensions in the future.
 
