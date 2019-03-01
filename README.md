@@ -9,7 +9,7 @@ A successful or insuccessful submit will show the output within 'filestoParse/in
 
 One component located in 'components/parseFile.cfc' which parses the file as text and checks for valid extension(s) with section noted for additional extensions in the future.
 
-2 tests are available to run from the 'cctests' folder 'cctests/1' and 'cctests/2' using testbox framwork: /testbox/test-runner/
+2 tests are available to run from the testbox framework /testbox/test-runner/  'cctests/1' and 'cctests/2' 
 
 
  ### Hypothetical Technical Requirement:
