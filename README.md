@@ -1,10 +1,16 @@
 clearCapitolTest
 Applicant Cyrus Horne : created 2/29/2019
 
-### INSTRUCTIONS
+### NOTES
+index.html page begins the application and has a file input form with client side validation of the file extension.
+The submit button is not active until a valid file is selected.
+A successful submit will show the output within 'filestoParse/index.cfm'
 
- Demonstrate Use of Files, Strings and
- Simple Patterns In ColdFusion or other OO language of choice
+One component located in 'components/parseFile.cfc' which parses the file as text and checks for valid extension(s) with section noted for additional extensions in the future.
+
+2 tests are available to run from the 'cctests' folder 'cctests/1' and 'cctests/2' using testbox framwork: /testbox/test-runner/
+
+
  ### Hypothetical Technical Requirement:
 
 Create a ColdFusion component that is able to read the next line from a text file and return a list of strings that represent each tab-delimited token that it reads from the file.  For example, given the following file contents:
