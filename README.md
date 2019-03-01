@@ -1,4 +1,4 @@
-clearCapitolTest
+clearCapitalTest
 Applicant Cyrus Horne : created 2/29/2019
 
 ### NOTES
