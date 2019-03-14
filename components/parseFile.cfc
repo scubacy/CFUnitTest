@@ -35,7 +35,7 @@ component output="false" hint="This parses flat files returns each line based on
 
         } else if ( delimiter EQ "tab" ) { // replaces the tabs with space and crlf with breaks
             var tabstring =  ListChangeDelims(textFile, chr(32), "#chr(9)#");
-            var finaltabstring =  replace(textFile, chr(13)&chr(10),"<br />","all");
+            var finaltabstring =  replace(tabstring, chr(13)&chr(10),"<br />","all");
           return finaltabstring;
 
         } else { //file extensions can be added in the future if needed.
